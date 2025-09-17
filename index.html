@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M. Zalal</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      :root {
+        font-family: "Fira Sans", sans-serif;
+        line-height: 1.6;
+        color: var(--color-teal-100);
+        font-size: 16px;
+        color-scheme: only dark;
+
+        /* Text Sizes */
+        --text-x-small: 0.694rem;
+        --text-small: 0.833rem;
+        --text-base: 1rem;
+        --text-large: 1.2rem;
+        --text-x-large: 1.44rem;
+        --text-2x-large: 1.728rem;
+        --text-3x-large: 2.074rem;
+        --text-4x-large: 2.488rem;
+        --text-5x-large: 2.986rem;
+
+        /* Colors */
+        --color-purple-100: #e2d9ec;
+        --color-purple-200: #c9b7dc;
+        --color-purple-300: #af92cb;
+        --color-purple-400: #956eb8;
+        --color-purple-500: #795399;
+        --color-purple-600: #573a6f;
+        --color-purple-700: #372448;
+        --color-purple-800: #1c1026;
+        --color-purple-900: #100717;
+
+        --color-teal-100: #d2e2e7;
+        --color-teal-200: #a6c5cf;
+        --color-teal-300: #7aa8b7;
+        --color-teal-400: #4c8ca0;
+        --color-teal-500: #0b7189;
+        --color-teal-600: #065264;
+        --color-teal-700: #023542;
+        --color-teal-800: #011a22;
+        --color-teal-900: #000407;
+
+        --color-coral-100: #fbe3e2;
+        --color-coral-200: #f6c7c5;
+        --color-coral-300: #efaca9;
+        --color-coral-400: #e7908e;
+        --color-coral-500: #dd7373;
+        --color-coral-600: #a45454;
+        --color-coral-700: #6e3636;
+        --color-coral-800: #3d1b1b;
+        --color-coral-900: #110505;
+      }
+
+      *,
+      *::before,
+      *::after {
+        font-family: inherit;
+        color: inherit;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-size: 10px 10px;
+        background-image: repeating-linear-gradient(
+          135deg,
+          var(--color-purple-900) 0,
+          var(--color-purple-900) 1px,
+          var(--color-purple-800) 0,
+          var(--color-purple-800) 50%
+        );
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--color-coral-500);
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .box-container,
+      .box-side {
+        padding: 25px;
+        background-color: var(--color-purple-800);
+      }
+
+      .box {
+        width: 250px;
+        height: 250px;
+        position: relative;
+        transform-style: preserve-3d;
+        transform-origin: center center -125px;
+        transition: transform 500ms;
+      }
+
+      .box.rotated {
+        transform: rotateY(-180deg);
+      }
+
+      .box-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        font-family: "Kode Mono";
+        border: 1px solid var(--color-teal-500);
+        cursor: pointer;
+        transition: all 300ms;
+      }
+
+      .box-side:hover {
+        background-color: var(--color-teal-700);
+        border: 1px solid var(--color-teal-200);
+      }
+
+      .box-side.front .name {
+        font-size: var(--text-large);
+      }
+
+      .box-side.front .description {
+        color: var(--color-teal-500);
+      }
+
+      .box-side.back {
+        transform: translateZ(-250px) rotateY(180deg);
+      }
+
+      .box-side.back ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .box-side.left {
+        transform: rotateY(-90deg) translateX(-125px) translateZ(125px);
+      }
+
+      .box-side.right {
+        transform: rotateY(90deg) translateX(125px) translateZ(125px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box-container">
+      <div class="box">
+        <div class="box-side front">
+          <div class="name">M. Zalal</div>
+          <div class="description">
+            <div>Web Developer</div>
+            <div>Graphic Designer</div>
+          </div>
+        </div>
+        <div class="box-side back">
+          <a href="mailto:contact@mzalal.net">contant@mzalal.net</a>
+          <div>
+            <ul>
+              <li>
+                <a href="https://github.com/mzalal/" target="_blank">GitHub</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/mzalal/" target="_blank"
+                  >LinkedIn</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="box-side left"></div>
+        <div class="box-side right"></div>
+      </div>
+    </div>
+    <script>
+      const box = document.querySelector(".box");
+      const boxFrontSide = document.querySelector(".box-side.front");
+      const boxBackSide = document.querySelector(".box-side.back");
+      const boxBackSideAnchors = boxBackSide.querySelectorAll("a");
+
+      boxFrontSide.addEventListener("click", () => {
+        box.classList.add("rotated");
+      });
+
+      boxBackSide.addEventListener("click", (event) => {
+        box.classList.remove("rotated");
+      });
+
+      boxBackSideAnchors.forEach((anchor) => {
+        anchor.addEventListener("click", (event) => event.stopPropagation());
+      });
+    </script>
+  </body>
+</html>
